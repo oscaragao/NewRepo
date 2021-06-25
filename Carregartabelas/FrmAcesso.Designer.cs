@@ -34,6 +34,8 @@
             this.txtCatalago = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.btnEntra = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTexto = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBanco
@@ -84,16 +86,40 @@
             this.btnEntra.UseVisualStyleBackColor = true;
             this.btnEntra.Click += new System.EventHandler(this.btnEntra_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(89, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(91, 20);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Visible = false;
+            // 
+            // lblTexto
+            // 
+            this.lblTexto.AutoSize = true;
+            this.lblTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTexto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblTexto.Location = new System.Drawing.Point(12, 82);
+            this.lblTexto.Name = "lblTexto";
+            this.lblTexto.Size = new System.Drawing.Size(249, 17);
+            this.lblTexto.TabIndex = 7;
+            this.lblTexto.Text = "** O Banco de Dados usado e o SQL SERVER.";
+            this.lblTexto.UseCompatibleTextRendering = true;
+            // 
             // FrmAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 90);
+            this.ClientSize = new System.Drawing.Size(353, 110);
+            this.Controls.Add(this.lblTexto);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEntra);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtCatalago);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblBanco);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acesso";
@@ -109,5 +135,7 @@
         private System.Windows.Forms.TextBox txtCatalago;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Button btnEntra;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblTexto;
     }
 }

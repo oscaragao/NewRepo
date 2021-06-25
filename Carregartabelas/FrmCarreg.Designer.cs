@@ -145,7 +145,6 @@
             this.txtPathArquivo.Name = "txtPathArquivo";
             this.txtPathArquivo.Size = new System.Drawing.Size(113, 20);
             this.txtPathArquivo.TabIndex = 9;
-            this.txtPathArquivo.Visible = false;
             this.txtPathArquivo.TextChanged += new System.EventHandler(this.txtPathArquivo_TextChanged);
             // 
             // btnProcurar

@@ -8,8 +8,9 @@ namespace Carregartabelas
 {
     static class Program
     {
-        public static string MeuCatalog = "";
-        public static string MyUser = "";
+        public static string MeuCatalog;
+        public static string MyUser;
+        public static string connString;
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -17,9 +18,8 @@ namespace Carregartabelas
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmCarregaTabelas());
-           Application.Run(new FrmAcesso());
+            Application.SetCompatibleTextRenderingDefault(false);  
+            Application.Run(new FrmAcesso());
         }
     }
 }

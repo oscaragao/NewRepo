@@ -14,23 +14,26 @@ namespace Carregartabelas
     class CarTab
     {
         Encoding enc = Encoding.GetEncoding("us-ascii", new EncoderExceptionFallback(), new DecoderExceptionFallback());
-
-     
-
-        private static string connString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog =" + Carregartabelas.Program.MeuCatalog + ";User ID=" + Carregartabelas.Program.MyUser + ";Data Source=localhost\\SQLEXPRESS;";
+        
         private static SqlConnection conn = null;
 
         // método que permite obter a conexão
         public static SqlConnection obterConexao()  
         {
             // vamos criar a conexão
-            conn = new SqlConnection(connString);
+            conn = new SqlConnection(Program.connString);
 
             // a conexão foi feita com sucesso?
             try
             {
-                // abre a conexão e a devolve ao chamador do método
-                conn.Open();
+                if (Program.connString == "") {
+                    conn = null;
+                }
+                else
+                {
+                    // abre a conexão e a devolve ao chamador do método
+                    conn.Open();
+                }
             }
             catch (SqlException)
             {
@@ -80,7 +83,7 @@ namespace Carregartabelas
 
                     ////Insert na s tabelas onbord
            
-                    SqlConnection sqlConn  = new SqlConnection(connString);
+                    SqlConnection sqlConn  = new SqlConnection(Program.connString);
                     sqlConn.Open();
                     SqlCommand  cmdsql = sqlConn.CreateCommand();
                     cmdsql.CommandText =@"Insert into " + vAtivo33 + @"(DS_EMP_ACAO ,NM_AT_ACAO )
@@ -96,9 +99,6 @@ namespace Carregartabelas
             file.Close();
 
         }
-
-       
-       
 
         public sealed class GenericSingleton<T> where T : class, new()
         {
@@ -116,7 +116,7 @@ namespace Carregartabelas
             }
         }
 
-
+      
     }
 }
 
