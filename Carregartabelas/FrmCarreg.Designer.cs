@@ -143,6 +143,7 @@
             this.txtPathArquivo.Name = "txtPathArquivo";
             this.txtPathArquivo.Size = new System.Drawing.Size(113, 20);
             this.txtPathArquivo.TabIndex = 9;
+            this.txtPathArquivo.Visible = false;
             this.txtPathArquivo.TextChanged += new System.EventHandler(this.txtPathArquivo_TextChanged);
             // 
             // btnProcurar
@@ -175,6 +176,7 @@
             this.txtArquivo.Name = "txtArquivo";
             this.txtArquivo.Size = new System.Drawing.Size(103, 20);
             this.txtArquivo.TabIndex = 1;
+            this.txtArquivo.Visible = false;
             this.txtArquivo.TextChanged += new System.EventHandler(this.txtArquivo_TextChanged);
             // 
             // lblBanco

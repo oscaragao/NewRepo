@@ -25,14 +25,12 @@ namespace Carregartabelas
             this.txtPathArquivo.Text = Program.connString;
             this.lblBanco.Text = Program.MeuCatalog;
             carregacombTabelas();
-            // primeivz = true;
         }
 
       
 
         private void Form1_Load(object sender, System.EventArgs e) 
         {
-            // InitializeComboBox();
             this.cboPatharquivo.Enabled = false;
         }
 
@@ -45,7 +43,6 @@ namespace Carregartabelas
                 cboPatharquivo.Items.Add(file);
             }
 
-       
         }
 
 
@@ -74,7 +71,6 @@ namespace Carregartabelas
                 comando.Fill(dtResultado);
                 cmbTabelas.DataSource = dtResultado;
                 cmbTabelas.ValueMember = "TABLE_NAME";
-                // cmbTabelas.DisplayMember = "DS_EMP_ACAO";
                 cmbTabelas.SelectedItem = "";
 
                 this.cmbTabelas.Text = "";
@@ -82,9 +78,7 @@ namespace Carregartabelas
             }
 
             // não precisamos mais da conexão? vamos fechá-la
-            CarTab.fecharConexao();
-
-            
+            CarTab.fecharConexao();   
         }
 
 
@@ -99,7 +93,6 @@ namespace Carregartabelas
                 string subs = Path.GetExtension(vcarTexto);
                 
                 this.txtextensao.Text = subs;
-                // this.txtArquivo.Text = "dbo.cad_acoes";
             }
          
         }
@@ -108,10 +101,7 @@ namespace Carregartabelas
         private void button1_Click(object sender, EventArgs e)
         {
           
-
             var dllcartab = new CarTab();
-
-
 
             try
             {
@@ -202,11 +192,7 @@ namespace Carregartabelas
             }
             else
             {
-
-                string ssql = "select count(1) as total, tabela from dbo.tbl_JK  where tabela = '" + patharquivo + "' group by tabela";
-
-
-             
+                string ssql = "select count(1) as total FROM sys.columns WHERE object_id = object_id('" + patharquivo + "')";
 
                 SqlCommand cmd = new SqlCommand(ssql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -217,9 +203,9 @@ namespace Carregartabelas
 
                    int  ltlista2 = reader.GetInt32(0);
 
-                    ltlista = Convert.ToString(ltlista2);
+                   ltlista = Convert.ToString(ltlista2);
 
-                  this.lblQuantCampos.Text = ltlista + " campos" ;
+                   this.lblQuantCampos.Text = ltlista + " campos" ;
                 }
 
 
@@ -227,8 +213,6 @@ namespace Carregartabelas
 
             // não precisamos mais da conexão? vamos fechá-la
             CarTab.fecharConexao();
-
-
         }
 
         private void fbdProc_HelpRequest(object sender, EventArgs e)
