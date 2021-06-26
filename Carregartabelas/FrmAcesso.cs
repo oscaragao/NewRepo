@@ -32,8 +32,9 @@ namespace Carregartabelas
 
                 try
                 { if (conn != null)
-                    { // FrmCarregaTabelas tela = new FrmCarregaTabelas();
-                      //tela.Show();
+                    { 
+                        FrmCarregaTabelas tela = new FrmCarregaTabelas();
+                        tela.Show();
                     }
                     else if (conn == null)
                     {
@@ -44,7 +45,7 @@ namespace Carregartabelas
                 catch (SqlException)
                 {
                         MessageBox.Show("Erro SQL Exception. Veja o log de erros.", "Erro Carregar Banco e Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                        throw;
                 }
 
             }
@@ -52,6 +53,9 @@ namespace Carregartabelas
             {
                 MessageBox.Show("Obrigatorio Preenchimento de Campos!!!", "Erro Carregar Banco e Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            CarTab.fecharConexao();
+
         }
 
  
@@ -71,6 +75,11 @@ namespace Carregartabelas
         public void PPconnString()
         {
             Program.connString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog =" + Carregartabelas.Program.MeuCatalog + ";User ID=" + Carregartabelas.Program.MyUser + ";Data Source=localhost\\SQLEXPRESS;";
+        }
+
+        private void lblTexto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

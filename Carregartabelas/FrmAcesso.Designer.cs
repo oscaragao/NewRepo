@@ -102,10 +102,11 @@
             this.lblTexto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblTexto.Location = new System.Drawing.Point(12, 82);
             this.lblTexto.Name = "lblTexto";
-            this.lblTexto.Size = new System.Drawing.Size(249, 17);
+            this.lblTexto.Size = new System.Drawing.Size(246, 17);
             this.lblTexto.TabIndex = 7;
-            this.lblTexto.Text = "** O Banco de Dados usado e o SQL SERVER.";
+            this.lblTexto.Text = "** O Banco de Dados usando o SQL SERVER.";
             this.lblTexto.UseCompatibleTextRendering = true;
+            this.lblTexto.Click += new System.EventHandler(this.lblTexto_Click);
             // 
             // FrmAcesso
             // 

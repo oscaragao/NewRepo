@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Carregartabelas.exe" size="36824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Carregartabelas.exe" size="39896">
       <assemblyIdentity name="Carregartabelas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SffYnr2pbdLMXzIeS48fOjUkt4K/19o4AymHV/fi83o=</dsig:DigestValue>
+        <dsig:DigestValue>yX6rgA+4iUib8uq7V4ZFHaR+XgXhlyO9vqNO+pV6Mx4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
